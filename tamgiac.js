@@ -42,7 +42,7 @@ var tg4 = new TamGiac(new Point(3,3), new Point(4,4), new Point(1,2));
 var tg5 = new TamGiac(new Point(1,2), new Point(3,4), new Point(4,3));
 var arr = [tg1, tg2, tg3, tg4, tg5];
 
-// var arrNum = [5, 4, 6, 7, 8];
+var arrNum = [-5, 4, 6, 7, 8, 9, -1, 23, -45];
 //
 // var is = arrNum.every(e => e > 3 );
 // var bis = arrNum.some(e => e > 7);
@@ -50,7 +50,19 @@ var arr = [tg1, tg2, tg3, tg4, tg5];
 // console.log('True or false?: ', bis);
 var isBig = arr.every(tamGiac => tamGiac.getChuVi() > 4);
 // var isMax = arr.every(tamGiac => tamGiac.max > 2);
-var indexTamGiac = arr.findIndex(e => e.max < 1);
-console.log(indexTamGiac);
+var indexTamGiac = arr.find(e => e.max < 2);
+//console.log(indexTamGiac);
 // console.log(isBig);
 //console.log(tg1.max);
+
+// var a = {b: 'PHP'};
+// var c = {b: 'PHP'};
+// console.log(a == d);
+var arrSoChan = arrNum.filter(e => e % 2 == 0);
+var arrSqr = arrNum.map(e => e*e);
+// console.log(arrSqr);
+var sort = arrNum.sort((a, b) => a - b);
+console.log(sort);
+
+var sortTamGiac = arr.sort((a, b) => a.max - b.max);
+console.log(sortTamGiac.map(e => e.max));
